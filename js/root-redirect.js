@@ -19,5 +19,5 @@ if (location.host.indexOf('earthpoints') >= 0) {
 } else if (location.host.indexOf('marta') >= 0 || location.host.indexOf('martapoints') >= 0 || location.host.indexOf('atlantapoints.com') >= 0) {
 	window.location="/explore/";
 } else {
-	window.location="/studio/";
+	window.location="/travelschool/";
 }
