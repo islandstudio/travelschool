@@ -1,229 +1,219 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Island Studio</title>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Resides at datascape.github.io/space/index.html -->
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/common/common.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/all.css" />
+  <meta charset="utf-8">
+  <title>TeVeS - Finding Neutrino - The "IceCube" Telescope</title>
+  
 
-	<style>
-		h1 {
-			font-family: "Cooper Light",Georgia,Times,"Times New Roman",serif;
-			font-weight: 400;
-		}
-		.maintext {
-			max-width:1200px; padding:120px 150px 300px 200px;
-		}
-		@media (max-width: 800px) {
-			.maintext {
-				padding:50px 50px 0 50px;
-			}
-		}
-	</style>
+  <link rel="stylesheet" type="text/css" href="/travelschool/css/all.css" />
+
+  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.5.3/plyr.css" />
 </head>
-<body>
+<body style="margin:0px; background:#000">
 
-<div id="menuHolder"></div>
-<img class="fixedBkgd" src="img/early/BorealForest.jpg" alt="" />
-
-<div class="container" style="float:right">
-
-<!--
-<div class="content">
-
-<h3><a href="summer/03-The-Inner-Inlet/" style="text-decoration: none; color:#DCDCDC">Awaiting your expectations</a></h3>
-
-</div>
--->
-
+<div class="plyr__video-embed" id="player">
+    <iframe
+        src="https://www.youtube.com/watch?v=t57DPnH06V0&origin=https://plyr.io&iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&rel=0&enablejsapi=1"
+        allowfullscreen
+        allowtransparency
+        allow="autoplay"
+    ></iframe>
 </div>
 
-<div class="maintext">
+
+<script src="https://cdn.plyr.io/3.5.3/plyr.js"></script>
+
+<style>
+  .plyr__volume {
+    display: none;
+  }
+</style>
+ <script>
+  const player = new Plyr('#player', {autopause:'true',color:'adef00'});
+  window.player = player;
+
+  setTimeout(function(){  
+    //player.currentTime = 50; // Seeks to 10 seconds
+    //player.volume = 0.5;
+    player.mutedX = true;
+    //player.color = 'adef00';
+
+    player.play();
+  }, 2000);
+</script>
+
 
 <br><br>
 
-<!--
-<h1 style="font-weight: 100">The best journeys start where&nbsp;we&nbsp;begin.</h1>
--->
+<div id="menuHolder"></div>
+<div class="container">
+<div class="content">
+
+<a href="../../" class="returnhome">Island Studio</a>
+
+<h1>Finding Neutrino</h1>
 
 
 
-<!--
-<h1 style="font-weight:100; font-size:42px">Endclave</h1>
 
 
-The story always ends with your death.
-It's just a question of how you get from here to there.<br><br>
+Out on frozen sea-ice, the two tallest buildings on Antarctica are located -- hangers which
+scientists are using to launch giant balloons 40 kilometers into the
+stratosphere to search for almost undetectable subatomic particles --
+neutrinos.</p>
 
-Every moment is a meditation.<br><br>
+<p><a href="/travelschool/sun/img/icecube_south_pole_detector.png"><img src="/travelschool/sun/img/icecube_south_pole_detector.png" style="width:100%" alt="" /></a></p>
 
-Endclave is a choose-your-own-path game/movie/novel title, with the tag line: "The story always ends with your death. It's just a question of how you get from here to there."  
+<h2>The "IceCube" Telescope!</h2>
 
-The title combines Endgame, with Enclave, with cave, with the notion of cutting off yourself from your previous self at the end of each journey. In other words, you don't have to let your previous experiences define your current experience. In the end you can completely transform if you successfully "clave" from your prior path - but you'd always want some form of a touchstone to connect your selves.
+<p>"The Neutrino Detection Project, led by Dr. Peter Gorham, a
+physicist from the University of Hawaii, wants to be the first
+scientific group to detect the highest energy neutrinos in the universe.</p>
 
--->
-<h1 style="font-weight:100; font-size:42px">Island Studio</h1>
+<p><img src="winter/img/neutrino.jpg" style="float:left; margin-right:20px" />
+&#8220;Neutrinos are electrically neutral leptons, and interact very rarely
+with matter. When they do react with the molecules of water in the ice,
+they can create charged leptons (electrons, muons, or taus). These
+charged leptons can, if they are energetic enough, emit Cherenkov
+radiation. This happens when the charged particle travels through the
+ice faster than the speed of light in the ice, similar to the bow shock
+of a boat traveling faster than the waves it crosses. This light can
+then be detected by photomultiplier tubes (PMTs) within the digital
+optical modules (or DOMs) making up IceCube. Even though it is located
+in Antarctica, IceCube is more sensitive to point sources more in the
+northern hemisphere than the southern. It can observe astrophysical
+neutrino signals from any direction, but in the southern hemisphere
+these neutrinos are swamped by the downgoing cosmic-ray muon
+background.&#8221;  - <a href="http://en.wikipedia.org/wiki/IceCube_Neutrino_Observatory" target="IceCube">More</a></p>
+ 
 
-<br>
+<p>Neutrinos carry away most of the gravitational energy released by the collapse of massive stars. Electric charge-free and with an extremely small mass, it is considered a key element, because it can relate both with matter and dark matter.</p>
 
-<div>
-	<p>
-	Island Studio combines open source AI, beautifully crafted interactive environments and 
-	experienced mentors. Best of all, our destinations are always amazing!
-	</p>
+<div style="clear:both"></div>
+<br><br>
 
-	
+<p><a href="/travelschool/sun/img/icecubeparti.jpg"><img src="/travelschool/sun/img/icecubeparti.jpg" style="width:100%" alt="" /></a></p>
 
-	<p>
-	"<i>What I like most about the Island Studio framework is the ease with which you can change the size and scale of your modeling environment. One second you are at the scale of an elementary particle.  Then wam, molecular physics experiences pop up around you that you can enter. 
-		 
-	The next second and you are exploring cellular biology, 
-	creating the base components of tools and building materials. 
+<p><a href="/travelschool/sun/img/icecube-neutrino.jpg"><img src="/travelschool/sun/img/icecube-neutrino.jpg" style="width:100%" alt="" /></a><br>
+Computer data shows a neutrino impact amid IceCube's hollow columns.</p>
 
-	You're learning engineering, geology, sociology and finance first hand.  
-	The game experience goes through every science discipline  
-	during the process of designing bots and power grids. 
-	Then you discover, it's not just a game, the objects the top-level players are creating - they're real.</i>" -&nbsp;Austen&nbsp;Helix
-	</p>
+<p><a href="/travelschool/sun/img/IceCube_standalone.jpg">How tall is the IceCube array compared to the Empire State Building?</a></p>
 
-	<hr>
-	<br>
+<p><a href="http://news.stanford.edu/news/2014/march/physics-cosmic-inflation-031714.html"><img src="img/antarctica/bicep-telescope.jpg" style="width:100%" alt="" /></a><br>
+<span style="font-size:0.8em">The 10-meter South Pole Telescope and the BICEP (Background Imaging of Cosmic Extragalactic Polarization) Telescope against the Milky Way. BICEP2 recently detected gravitational waves in the cosmic microwave background, a discovery that supports the cosmic inflation theory of how the universe began. (Photo: Keith Vanderlinde, National Science Foundation)</span></p>
 
-	<p>
-		<b>Preparing for Departure</b>
-	</p>
-	<p>
-	You are scheduled to arrive with your family at 6:30 pm.  Each arrival is staggered by 30 minutes to check temperatures and swab for viruses.  Please have a good night's rest. We'll have initial test results in the morning, followed by a four days of crafting and  sharing stories in the hotel before we embark on the boat to the studio.
-	</p>
-	
-
-	<p>
-	<a href="application">Day One</a>
-	</p>
-	<br>
-
-	
-	<!--
-	
-
-	<a href="https://uploadvr.com/neos-world-engine-launch/">world orbs</a>
-
-	<p><a href="https://www.youtube.com/watch?v=vUBaZQNn3UY">Neos VR Beta</a></p>
-
-	<p><a href="https://www.youtube.com/watch?v=MzfWQ8DUvhQ">Brush slave</a></p>
-	-->
-	
-
-<div style="display:none" class="local localsection">
-
-	<span style="display:none" class="local">
-			- <a href="blender">Blender</a>
-		</span>
-
-	Tools like <a href="https://store.steampowered.com/app/740250/Neos_VR/">NeosVR</a>
-
-	<p>Mitch Lancroft</p>
-
-	<p>Mitch's son Austen's popular Real-World<sup style="font-size:10px">tm</sup> video game Moon Dog was developed using <a href="https://store.steampowered.com/app/740250/Neos_VR/">NeosVR</a>.
-	<!-- https://www.youtube.com/watch?v=vUBaZQNn3UY -->
-
-	Before it was removed, the Moon Dog profile read: "<i>You and your dog are among the members of a covert group, outmaneuvering entrenched monopolies, forming alliances with other independents, and using net-positive systems to power your bots, with surplus energy sold to neighboring microgrids.</i>"
-	</p>
-
-	<p>
-	His sister Laura followed his success two years later with the release of the Cat Star mod. She extended the Moon Dog base with her own tales of space and exploration, astronomy and astrophysics.
-	Both apps became a gateway to a whole other level of competition. Not just planning and design, but actual implementation. 
-	Players became owners of bots, hired surfers, the whole 9&nbsp;yards.</p>
-
-	<!-- Abbey says Transit Jewels are a little like a fireboy and watergirl map -->
-
-	<p>That's why Cat Star and Moon Dog were shut down - too much of a threat. Everything was decentralized. 
-		There was no mechanism for control.  But that's how the most successful players liked it, the open and organic nature of their code allowed it to morph, survive and thrive.
-	</p>
+Great moments in science...<br>
+<iframe width="450" height="253" src="//www.youtube.com/embed/ZlfIVEy_YOA" frameborder="0" allowfullscreen></iframe>
+<br><br>
 
 
-	Mining for moon drops
-	https://www.msn.com/en-us/news/other/historys-largest-mining-operation-is-about-to-begin/ar-BBY7fU8
+<h2>Expedition Journal: 1/19/2010 - The Energy of Waves</h2>
 
-	<p>
-	12,800 years ago the interglacial period ended when asteroid explosions over Greenland released ice bound arctic lakes. The heat of the explosion caused nano diamond carbon dust to encircle the earth, which blocked the sun and resulted in a massive die off.  8,000 years ago the warming trend returned as human farming and herding began, exceeding the carbon absorption of limestone exposed by Himalayan uplift. <a href="https://www.sciencedaily.com/releases/2019/10/191025110314.htm">impact trigger</a>
-	</p>
+<p>Tensor-vector-scalar gravity (TeVeS) is a disputed theory of modified
+gravity that accounts for the flat rotation curves of galaxies. The
+TeVeS theory requires massive neutrinos, hot dark matter to make the
+equations work. We know longer believe in this theory.</p>
+ 
+<p>From Encounters at the End of the World (2007):</p>
 
-	<p>
-	Using electrodes coated with carbon nanotubes, MIT developed a low energy process that "captures carbon dioxide from any concentration, including 400 parts per million, and allows its release into any carrier stream, including 100 percent CO2."
-	https://www.sciencedaily.com/releases/2019/10/191025170815.htm
-	</p>
+<p>"The Neutrino Detection Project, led by Dr. Peter Gorham, a
+physicist from the University of Hawaii, wants to be the first
+scientific group to detect the highest energy neutrinos in the universe.
+He excitedly gushes (though still struggles finding the words to
+describe something he's only beginning to understand): "The neutrino is
+the most ridiculous particle you can imagine. ...They exist, but we
+can't get our hands on them, because they seem to just exist in another
+place. ...And, as a physicist, even though I understand it
+mathematically, and I understand it intellectually, it still hits me in
+the gut that there is something here, surrounding me, almost like some
+kind of spirit or God, that I can't touch, but I can measure it. I can
+make a measurement. It's like measuring the spirit world, or something
+like that..."</p>
+ 
+<p>Through our eyes the universe is perceiving itself... - Alan Watts</p>
+ 
 
-	<p>
-	<a href="https://arxiv.org/pdf/1806.00046.pdf">Early cave art</a> may be depicting constellations.
-	
+<h2>I'll Follow the Sun, Pole to Pole</h2>
 
-	The famous 'Vulture Stone' appears on pillars at pillars at Göbekli Tepe.
-	It appears to be a date stamp for 10950 BC ± 250 yrs
+<p>At the opposite pole an Inuit man paddles harder and harder, left, right, left, right. On
+the edge of air and water, his kayak glides past walls of ice and rocky
+outcroppings. Faster he glides, with each even stroke accelerating the
+craft on the smooth surface away from the turbulent shoreline.</p>
+ 
+<p>This morning I gradually awoke from the paddling.  Gliding along the
+icy artic coast, the voice of an elder in my mind. &#8220;When you
+travel the surface between elements, you will move faster than through either
+element alone.&#8221;</p>
+ 
+<p>As I paddled, near the massive outcropping, my efforts were slowed. 
+Buffeted by the waves as they bounce off the rocks and set my boat rocking,
+counter to my efforts.  It is not until I adjust my
+strokes to use the rocking to my advantage, then I can use the rhythmic
+waves to increase my speed. This adjustment is the secret to many
+things.</p>
+ 
+ <p>
+ "It's similar to the waves we see on the ocean," said Unruh. "They are not affected by the intense dance of the individual atoms that make up the water on which those waves ride."
 
-	The carving is thought to depict the 
+More: <a href="https://www.sciencedaily.com/releases/2017/05/170515111133.htm">Solving one of nature's great puzzles: What drives the accelerating expansion of the universe?</a>
+</p>
 
-	Taurid meteor stream
-	</p>
+<p>Yesterday we found another guest to invite, Chinese astronomer Sheng
+Zhao.</p> 
+ 
+<p>Tensor-vector-scalar gravity (TeVeS) – a 'simple' formula that
+explicitly tells how gravity should behave in the transition zone
+between the solar system, where the golden laws of Newton and Einstein
+apply, and the outskirts of galaxies.  It’s a <a href='http://www.space.com/scienceastronomy/091105-missing-matter.html'>Modified Theory of Newtonian Dynamics</a> (MOND) theory that works
+perfectly for most galaxies.  But it has yet to explain the bullet
+cluster.</p>
+ 
+<p>&#8220;Under MOND, mass is much more effective at bending space-time than
+under General Relativity, so it takes less stuff in the universe to
+account for all the gravity we measure.  When applied to just galaxies,
+MOND can predict very well the behavior that astronomers observe. But
+when MOND is applied to larger structures like clusters of galaxies, it
+fails. To make MOND work for clusters, it must include more complicated
+concepts, such as entities called dark fields, which are different from
+dark matter, but work in a similar way to alter the amount of gravity
+present.&#8221;</p>
+ 
+<p></p>
+ 
+<p>&#8220;<a href="http://en.wikipedia.org/wiki/Shapiro_delay">Shapiro delay</a> - Radar signals passing near a massive object take
+slightly longer to travel to a target and longer to return than it would
+if the mass of the object were not present.&#8221; &nbsp;Time is delayed for light
+traveling around a single mass.</p>
+ 
+<p>Back in the Inuit villiage, a group of colorfully dressed children are
+winding ribbons around a May pole.  Braiding colors to a circling
+rhythm.</p>
+ 
+<p>The May Day celebration has ended and the older boys have the task of removing
+the pole. The first two tug and push to no avail, stuck in the frozen
+mud.  A third, smaller boy, approaches the pole and sets his hand on it and
+gives a little push. Then another gentle push, and another, and soon the
+top of the pole is vibrating back and forth. With a slight upward push of his hand with each nudge, the bottom of the pole slowly rises out of the permafrost.</p>
+ 
+<p>Back and forth, back and forth. Pole to pole.</p>
 
-	<p>
-	Data storage in molecules, not DNA
-	<a href="https://www.sciencedaily.com/releases/2019/05/190501081949.htm">Storing info in molecules, for millions of years</a>
-	</p>
+<p>Langford had dropped out of college to pursue a dream of returning ice to polar regions using a Peltier element to produce <a href="https://www.sciencedaily.com/releases/2019/04/190419165531.htm">ice without energy</a>.
 
-	<p>
-	I wanted to create a vehicle for all the great science articles that the internet makes so immediately accessible.  A framework from which the interested reader could dig deeper into something recently discovered.
-	</p>
-	<p>
-	The other goal has been to give the written medium a visual edge that would allow it to compete with the enticements of online video, without departing from the contemplative nature of reading.  Allowing for both short attention spans, and expansions into greater depth without leaving the comfortable shell of each narrative. There's a path for the reader who want to only spend 10 minutes within the work, and another for individuals who will return often and build upon the story's connected resources.
-	</p>
-	<p>
-	Each chapter is a meditation, an unrushed, prolonged thought grounded in each author's experiences. Taking concepts from the present, future and past, then blending in nuance and textures to create a new image.  I'll mull over something for a long time, like did fertility issues lead to the demise of neanderthal, and what was it like to observe this shift from the perspective of a disappearing race, and what of the few women who could bear female children with this dying race of men?
-	</p>
-	<p>
-		 "I appreciate any author who writes with a local vernacular. After that, I am having difficulty separating style from subject matter. Here are a few authors that jump off my list of books read: Elmer Kelton, Rick Bragg, Smokey Yunick (his wife may have transcribed his recorded stories), and Bonnie Jo Campbell." - Grandpa Larry
-	</p>
+  But then the chilling technology we were developing took a profitable turn to become the very popular "PopBox" curb-side fridge business you know of today.  Designed so the lids were flush with ground level, the solar panel on the lid allowed the box to also heat a meal as residents returned home.
+</p>
+
+<p>Continue: <a href="/travelschool/spring/finibus-tour">Finibus Tour</a></p>
+
+<ul class="footer">
+    <li><a href="/travelschool/">&copy; 2020 Island Studio</a></li>
+</ul>
+
 </div>
-
-<br><br><br><br><br><br><br><br>
-
-
 </div>
-
-</div>
-
-<div id="footer">
-	<div style="float:right">
-		<a href="summer/03-The-Inner-Inlet/"><img src="img/icons/arrow-right.png" style="height:32px; margin-top:20px"></a>
-	</div>
-
-	<ul class="footer">
-		<li>&copy; 2020 Island Studio</li>
-	</ul>
-
-</div>
-
-<script type="text/javascript">
-function loadjscssfile(filename){
-    var fileref=document.createElement('script')
-    fileref.setAttribute("type","text/javascript")
-    fileref.setAttribute("src", filename)
-   if (typeof fileref!="undefined")
-    document.getElementsByTagName("head")[0].appendChild(fileref)
-}
-$(document).ready(function(){
-  $("#menuHolder").load( "menu.html", function( response, status, xhr ) {
-   
-  });
-});
-</script>
-<style type='text/css'>
-  #menuHolder {display:none;}
-</style>
 
 </body>
-</html>
