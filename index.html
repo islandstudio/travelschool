@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
-  <!-- Resides at datascape.github.io/space/index.html -->
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html;">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 
-  <meta charset="utf-8">
-  <title>TeVeS - Finding Neutrino - The "IceCube" Telescope</title>
+<title>TeVeS - Finding Neutrino - The "IceCube" Telescope</title>
+
+<script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+
+<link type="text/css" rel="stylesheet" href="https://neighborhood.org/localsite/css/base.css" />
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/d3.v5.min.js"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/jquery/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/localsite.js"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/showdown.min.js"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/navigation.js"></script>
+
+<link type="text/css" rel="stylesheet" href="https://neighborhood.org/localsite/css/bootstrap.darkly.min.css">
+<link rel="stylesheet" type="text/css" href="/travelschool/css/all.css" />
+
   
-
-  <link rel="stylesheet" type="text/css" href="/travelschool/css/all.css" />
-
-  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-
-  <link rel="stylesheet" href="https://cdn.plyr.io/3.5.3/plyr.css" />
 </head>
 <body style="margin:0px; background:#000">
 
 <div class="plyr__video-embed" id="player">
+    <div id="vidCover">
+    </div>
     <iframe
         src="https://www.youtube.com/watch?v=t57DPnH06V0&origin=https://plyr.io&iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&rel=0&enablejsapi=1"
         allowfullscreen
@@ -25,17 +36,75 @@
     ></iframe>
 </div>
 
-<!--
-  The problem isn't that you need to be in a classroom.<br>
-  The problem is that you need to be out actively changing the world.
--->
-
-<script src="https://cdn.plyr.io/3.5.3/plyr.js"></script>
-
+<script>
+    param.titleArray = ["travel","school"]
+    param.startTitle = "Island Studio"
+    param.headerLogoX = "<img src='img/logo/[].png' style='width:28px'>";
+    param.headerFileX = "header.html"
+    param.footer = "footer.html"
+</script>
 <style>
-  .plyr__volume {
-    display: none;
+  .showMenu { display:none; }
+  #headeroffset {
+    display:none;
   }
+  #vidCover {
+    position: absolute;
+    z-index: 100;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+  }
+  .plyr__volume {
+    displayX: none;
+  }
+
+
+   /* + PLYR HIDE RELATED ON PAUSE - BLURRED BACKGROUND - HIDES FILMSTRIP */
+   /*
+  .plyr--paused .plyr__poster {
+    z-index: 2;
+    filter: blur(1rem);
+    position: absolute;
+    opacity: 1;
+    top: 65px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  */
+
+  .storybox {
+      clear:both;
+      padding: 30px;
+  }
+  @media (min-width: 800px) {
+      .storybox {
+          position: absolute;
+          left: 0px;
+          bottom: 140px;
+          heightX: 420px;
+          width: 420px;
+          background-color: rgba(35, 35, 35, .85);
+          padding: 50px 60px 40px 120px;
+          color:#fff;
+          line-height: 2.6em;
+          font-size: 16px;
+      }
+  }
+  .hideAdvanced {
+    position:absolute;
+    top:0px;
+    right:20px;
+    cursor:pointer;
+    opacity:0.5;
+  }
+  /*
+  .plyr__video-embed iframe {
+    pointer-events: all !important;
+  }
+  */
 </style>
  <script>
   const player = new Plyr('#player', {autopause:'true',color:'adef00'});
@@ -49,10 +118,61 @@
 
     player.play();
   }, 2000);
+
+
+  player.on('pause', event => {
+    //const instance = event.detail.plyr;
+    $("#headerbar").fadeIn();
+    $(".storybox").fadeOut();
+  });
+
+  player.on('play', event => {
+    //const instance = event.detail.plyr;
+    $("#headerbar").fadeOut();
+    $(".storybox").fadeIn();
+    $("#vidCover").show();
+  });
+
+  // Allow click through. Need to block rollover.
+  
+  let plyrPosterExists = document.getElementsByClassName('plyr__poster')
+  if (plyrPosterExists.length > 0) plyrPosterExists[0].style.display = 'none'
+
+
+$(document).ready(function(){
+
+    /*
+    $(".hideAdvanced").click(function(event) {
+
+      //$(this).parents('div').fadeOut();
+      $(".storybox").fadeOut();
+      //alert("2")
+    });
+    */
+});
+
+// Works on dynamic elements added to the DOM after declaring.
+$(document).on('click', '.hideAdvanced', function () {
+    $(this).parent().fadeOut();
+});
+$(document).on('click', '#vidCover', function () {
+    player.pause();
+    $("#vidCover").hide();
+});
+
+
+
 </script>
 
 
-<br><br>
+<div class="storybox">
+<div class="hideAdvanced">✕</div>
+
+Tensor–vector–scalar gravity (TeVeS) is a disputed theory of modified gravity that accounts for the flat rotation curves of galaxies. The TeVeS theory requires massive neutrinos, hot dark matter to make the equations work. I still believe. 
+
+</div>
+
+<br>
 
 <div id="menuHolder"></div>
 <div class="container">
@@ -64,20 +184,19 @@
 
 
 
+<h2>Expedition Journal: The Energy of Waves</h2>
 
 
-Out on frozen sea-ice, the two tallest buildings on Antarctica are located -- hangers which
-scientists are using to launch giant balloons 40 kilometers into the
-stratosphere to search for almost undetectable subatomic particles --
-neutrinos.</p>
+Out on the sea-ice stand the two tallest buildings on the continent -- the IceCube Lab where scientists search for almost undetectable subatomic particles -- neutrinos.</p>
 
 <p><a href="/travelschool/sun/img/icecube_south_pole_detector.png"><img src="/travelschool/sun/img/icecube_south_pole_detector.png" style="width:100%" alt="" /></a></p>
+<p><a href="/travelschool/sun/img/IceCube_standalone.jpg">How tall is the IceCube array compared to the Empire State Building?</a></p>
 
-<h2>The "IceCube" Telescope!</h2>
+<h2>The "IceCube" Telescope</h2>
 
-<p>"The Neutrino Detection Project, led by Dr. Peter Gorham, a
-physicist from the University of Hawaii, wants to be the first
-scientific group to detect the highest energy neutrinos in the universe.</p>
+<p>
+The Neutrino Detection Project, lead by Dr. Peter Gorham, a physicist from the University of Hawaii, was the first scientific group to detect the highest energy neutrinos in the universe. He excitedly gushes (though still struggles finding the words to describe something he's only beginning to understand): "The neutrino is the most ridiculous particle you can imagine. They exist, but we can't get our hands on them, because they seem to just exist in another place.  And, as a physicist, even though I understand it mathematically, and I understand it intellectually, it still hits me in the gut that there is something here, surrounding me, almost like some kind of spirit or God, that I can't touch, but I can measure it. I can make a measurement. It's like measuring the spirit world, or something like that... From Encounters at the End of the World (2007)
+</p>
 
 <p><img src="winter/img/neutrino.jpg" style="float:left; margin-right:20px" />
 &#8220;Neutrinos are electrically neutral leptons, and interact very rarely
@@ -96,7 +215,11 @@ these neutrinos are swamped by the downgoing cosmic-ray muon
 background.&#8221;  - <a href="http://en.wikipedia.org/wiki/IceCube_Neutrino_Observatory" target="IceCube">More</a></p>
  
 
-<p>Neutrinos carry away most of the gravitational energy released by the collapse of massive stars. Electric charge-free and with an extremely small mass, it is considered a key element, because it can relate both with matter and dark matter.</p>
+<p>Neutrinos carry away most of the gravitational energy released by the collapse of massive stars. Electric charge-free and with an extremely small mass (0.1 eV or greater, compared with about 0.5 MeV for the electron), it is considered a key element, because it can relate both with matter and dark matter - if there is such a thing.
+
+<!-- "A very interesting possibility – postulated in 1977 by Murray Gell-Mann, Pierre Ramond and Dick Slansky – is that the neutrino masses are inversely proportional to the high-energy scale at which the quark-lepton symmetry is broken."
+-->
+</p>
 
 <div style="clear:both"></div>
 <br><br>
@@ -106,77 +229,73 @@ background.&#8221;  - <a href="http://en.wikipedia.org/wiki/IceCube_Neutrino_Obs
 <p><a href="/travelschool/sun/img/icecube-neutrino.jpg"><img src="/travelschool/sun/img/icecube-neutrino.jpg" style="width:100%" alt="" /></a><br>
 Computer data shows a neutrino impact amid IceCube's hollow columns.</p>
 
-<p><a href="/travelschool/sun/img/IceCube_standalone.jpg">How tall is the IceCube array compared to the Empire State Building?</a></p>
 
-<p><a href="http://news.stanford.edu/news/2014/march/physics-cosmic-inflation-031714.html"><img src="img/antarctica/bicep-telescope.jpg" style="width:100%" alt="" /></a><br>
-<span style="font-size:0.8em">The 10-meter South Pole Telescope and the BICEP (Background Imaging of Cosmic Extragalactic Polarization) Telescope against the Milky Way. BICEP2 recently detected gravitational waves in the cosmic microwave background, a discovery that supports the cosmic inflation theory of how the universe began. (Photo: Keith Vanderlinde, National Science Foundation)</span></p>
-
-Great moments in science...<br>
-<iframe width="450" height="253" src="//www.youtube.com/embed/ZlfIVEy_YOA" frameborder="0" allowfullscreen></iframe>
-<br><br>
-
-
-<h2>Expedition Journal: 1/19/2010 - The Energy of Waves</h2>
-
-<p>Tensor-vector-scalar gravity (TeVeS) is a disputed theory of modified
-gravity that accounts for the flat rotation curves of galaxies. The
-TeVeS theory requires massive neutrinos, hot dark matter to make the
-equations work. We know longer believe in this theory.</p>
- 
-<p>From Encounters at the End of the World (2007):</p>
-
-<p>"The Neutrino Detection Project, led by Dr. Peter Gorham, a
-physicist from the University of Hawaii, wants to be the first
-scientific group to detect the highest energy neutrinos in the universe.
-He excitedly gushes (though still struggles finding the words to
-describe something he's only beginning to understand): "The neutrino is
-the most ridiculous particle you can imagine. ...They exist, but we
-can't get our hands on them, because they seem to just exist in another
-place. ...And, as a physicist, even though I understand it
-mathematically, and I understand it intellectually, it still hits me in
-the gut that there is something here, surrounding me, almost like some
-kind of spirit or God, that I can't touch, but I can measure it. I can
-make a measurement. It's like measuring the spirit world, or something
-like that..."</p>
- 
 <p>Through our eyes the universe is perceiving itself... - Alan Watts</p>
  
+<p>"In 2013, the IceCube neutrino experiment at the South Pole reported the observation of two ultra-high-energy neutrino events, which they named after Sesame Street characters <a href="/travelschool/sun/img/bert-and-ernie.png">Bert and Ernie</a>. The third, they nichknamed "Big Bird".</p>
 
+<p>
+In 2018 Astronomers traced a high-energy neutrino to its cosmic source for the first time, the jets of a Blazer black hole which points in our general direction from within the Orien constellation.  Cosmic rays are emitted simultaneously, but their charged nature causes them to take a meandering path.
+</p>
+
+<p><a href="http://news.stanford.edu/news/2014/march/physics-cosmic-inflation-031714.html"><img src="img/antarctica/bicep-telescope.jpg" style="width:100%" alt="" /></a><br>
+The 10-meter South Pole Telescope and the BICEP (Background Imaging of Cosmic Extragalactic Polarization) Telescope against the Milky Way. BICEP2 recently detected gravitational waves in the cosmic microwave background, a discovery that supports the cosmic inflation theory of how the universe began. (Photo: Keith Vanderlinde, National Science Foundation)</p>
+
+
+<iframe width="100%" height="600" src="//www.youtube.com/embed/ZlfIVEy_YOA" frameborder="0" allowfullscreen></iframe><br>
+Great moments in science - a toast to the inflation of the universe.<br><br>
+
+
+<!--
 <h2>I'll Follow the Sun, Pole to Pole</h2>
+-->
 
-<p>At the opposite pole an Inuit man paddles harder and harder, left, right, left, right. On
-the edge of air and water, his kayak glides past walls of ice and rocky
+<h2>The Energy of Waves</h2>
+
+<br>
+<h3>Through our eyes the universe is perceiving itself - Alan Watts</h3>
+<br>
+
+<p>At the opposite pole, the Inuit man paddles harder and harder, left, right, left, right. 
+On the edge of air and water, his kayak glides past walls of ice and rocky 
 outcroppings. Faster he glides, with each even stroke accelerating the
 craft on the smooth surface away from the turbulent shoreline.</p>
  
-<p>This morning I gradually awoke from the paddling.  Gliding along the
-icy artic coast, the voice of an elder in my mind. &#8220;When you
-travel the surface between elements, you will move faster than through either
+<p>This morning I gradually awoke, still gliding along the
+icy artic coast, the voice of an elder in my mind. 
+&#8220;When you travel the surface between elements, find the rhythm and there you will move faster than amoung either
 element alone.&#8221;</p>
  
-<p>As I paddled, near the massive outcropping, my efforts were slowed. 
-Buffeted by the waves as they bounce off the rocks and set my boat rocking,
-counter to my efforts.  It is not until I adjust my
-strokes to use the rocking to my advantage, then I can use the rhythmic
-waves to increase my speed. This adjustment is the secret to many
-things.</p>
+<p>As I paddle, near the massive outcropping, my efforts are slowed.  Buffeted by waves as they bounce off the rocks and set my boat rocking, counter to my efforts.  It is not until I adjust my strokes to use the rocking to my advantage that I can use the rhythmic waves to increase my speed.</p>
  
  <p>
  "It's similar to the waves we see on the ocean," said Unruh. "They are not affected by the intense dance of the individual atoms that make up the water on which those waves ride."
-
-More: <a href="https://www.sciencedaily.com/releases/2017/05/170515111133.htm">Solving one of nature's great puzzles: What drives the accelerating expansion of the universe?</a>
 </p>
 
-<p>Yesterday we found another guest to invite, Chinese astronomer Sheng
-Zhao.</p> 
- 
+<p>
+  More: <a href="https://www.sciencedaily.com/releases/2017/05/170515111133.htm">Solving one of nature's great puzzles: What drives the accelerating expansion of the universe?</a>
+</p>
+
+
+<h2>TeVeS - I Still Believe</h2>
+<br>
+
+<p>Yesterday we found another guest to invite...<br>
+Chinese astronomer Sheng Zhao. <!-- FIND OR INVITE ANOTHER--> 
+</p>
+
+
+
 <p>Tensor-vector-scalar gravity (TeVeS) – a 'simple' formula that
 explicitly tells how gravity should behave in the transition zone
 between the solar system, where the golden laws of Newton and Einstein
-apply, and the outskirts of galaxies.  It’s a <a href='http://www.space.com/scienceastronomy/091105-missing-matter.html'>Modified Theory of Newtonian Dynamics</a> (MOND) theory that works
-perfectly for most galaxies.  But it has yet to explain the bullet
-cluster.</p>
+apply, and the outskirts of galaxies. 
  
+ It’s a MOND theory that works perfectly for most galaxies. But it has yet to explain the bullet cluster. 
+
+ MOND stands for <a href='http://www.space.com/scienceastronomy/091105-missing-matter.html'>MOdified Newtonian Dynamics</a>, discovered by the Israeli physicist Prof. Dr. Mordehai Milgrom.
+ </p>
+
 <p>&#8220;Under MOND, mass is much more effective at bending space-time than
 under General Relativity, so it takes less stuff in the universe to
 account for all the gravity we measure.  When applied to just galaxies,
@@ -187,13 +306,28 @@ concepts, such as entities called dark fields, which are different from
 dark matter, but work in a similar way to alter the amount of gravity
 present.&#8221;</p>
  
-<p></p>
+<p>
+  "One primary success of TeVeS is that it provides an enhancement of gravitational lensing, which could not be achieved by other MONDian theories." - <a href="https://inspirehep.net/literature/687344">2005</a> 
+
+How Would Galaxies Form in a Universe Without Dark Matter? Researchers Find Out
+2020 - 
+  https://scitechdaily.com/how-would-galaxies-form-in-a-universe-without-dark-matter-researchers-find-out/
+</p>
  
-<p>&#8220;<a href="http://en.wikipedia.org/wiki/Shapiro_delay">Shapiro delay</a> - Radar signals passing near a massive object take
-slightly longer to travel to a target and longer to return than it would
+<p>
+The Bullet cluster and others exhibit that under the right conditions, gravity exhibits non-local effects.
+
+One of the surviving MOND theiries is MOG: a theory of gravity with non-local effects akin to quantum physics on the scale of galaxy clusters (perhaps when the relative absense of matter in the surrounding universe exerts less influence).
+</p>
+
+
+<p>&#8220;<a href="http://en.wikipedia.org/wiki/Shapiro_delay">Shapiro delay</a> - Radar signals passing near a massive object take slightly longer to travel to a target and longer to return than it would
 if the mass of the object were not present.&#8221; &nbsp;Time is delayed for light
 traveling around a single mass.</p>
  
+<h2>Pole to Pole</h2>
+<br>
+
 <p>Back in the Inuit villiage, a group of colorfully dressed children are
 winding ribbons around a May pole.  Braiding colors to a circling
 rhythm.</p>
@@ -212,6 +346,15 @@ top of the pole is vibrating back and forth. With a slight upward push of his ha
 </p>
 
 <p>Continue: <a href="/travelschool/spring/finibus-tour" target="finibus">Finibus Tour</a></p>
+
+
+
+
+<p style="display:none" class="local">
+
+  “Under MOND, mass is much more effective at bending space-time than under General Relativity, so it takes less stuff in the universe to account for all the gravity we measure. When applied to just galaxies, MOND can predict very well the behavior that astronomers observe. But when MOND is applied to larger structures like clusters of galaxies, it fails. To make MOND work for clusters, it must include more complicated concepts, such as entities called dark fields, which are different from dark matter, but work in a similar way to alter the amount of gravity present.” http://www.space.com/scienceastronomy/091105-missing-matter.html “Shapiro delay - Radar signals passing near a massive object take slightly longer to travel to a target and longer to return than it would if the mass of the object were not present.” Time is delayed for light traveling around a single mass. http://en.wikipedia.org/wiki/Shapiro_delay Back in the Inuit villiage, a group of colorfully dressed children are winding ribbons around a May pole. Braiding colors to a circling rhythm. The celebration has ended and the older boys have the task of removing the pole. The first two tug and push to no avail, stuck in the frozen permafrost. A third, approaches the pole and sets his hand on it and gives a little push. Then another gentle push, and another, and soon the top of the pole is vibrating back and forth, as the bottom of the pole slowly rises out of the permafrost muck. Back and forth, back and forth. Pole to pole. “Neutrinos are electrically neutral leptons, and interact very rarely with matter. When they do react with the molecules of water in the ice, they can create charged leptons (electrons, muons, or taus). These charged leptons can, if they are energetic enough, emit Cherenkov radiation. This happens when the charged particle travels through the ice faster than the speed of light in the ice, similar to the bow shock of a boat traveling faster than the waves it crosses. This light can then be detected by photomultiplier tubes (PMTs) within the digital optical modules (or DOMs) making up IceCube. Even though it is located in Antarctica, IceCube is more sensitive to point sources more in the northern hemisphere than the southern. It can observe astrophysical neutrino signals from any direction, but in the southern hemisphere these neutrinos are swamped by the downgoing cosmic-ray muon background.” http://en.wikipedia.org/wiki/IceCube_Neutrino_Observatory
+</p>
+
 
 <ul class="footer">
     <li><a href="/travelschool/">&copy; 2020 Island Studio</a></li>
