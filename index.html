@@ -8,6 +8,7 @@
 
 <title>TeVeS - Finding Neutrino - The "IceCube" Telescope</title>
 
+
 <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
 <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
 
@@ -18,10 +19,12 @@
 <script type="text/javascript" src="https://neighborhood.org/localsite/js/showdown.min.js"></script>
 <script type="text/javascript" src="https://neighborhood.org/localsite/js/navigation.js"></script>
 
+<!-- video loading is broken in Chrome, regardless of darkley presense -->
 <link type="text/css" rel="stylesheet" href="https://neighborhood.org/localsite/css/bootstrap.darkly.min.css">
 <link rel="stylesheet" type="text/css" href="/travelschool/css/all.css" />
 
-  
+
+
 </head>
 <body style="margin:0px; background:#000">
 
@@ -83,10 +86,10 @@
       .storybox {
           position: absolute;
           left: 0px;
-          bottom: 140px;
+          bottom: 200px;
           heightX: 420px;
           width: 420px;
-          background-color: rgba(35, 35, 35, .85);
+          background-color: rgba(35, 35, 35, .5);
           padding: 50px 60px 40px 120px;
           color:#fff;
           line-height: 2.6em;
@@ -116,7 +119,7 @@
     player.mutedX = true;
     //player.color = 'adef00';
 
-    player.play();
+    player.play(); // Not working in Chrome
   }, 2000);
 
 
@@ -128,8 +131,15 @@
 
   player.on('play', event => {
     //const instance = event.detail.plyr;
-    $("#headerbar").fadeOut();
-    $(".storybox").fadeIn();
+
+    // Delayed to allow time for video title to disappear.
+    setTimeout(function(){
+      $("#headerbar").fadeOut();
+    }, 4000);
+    setTimeout(function(){
+      $(".storybox").fadeIn();
+    }, 33000);
+
     $("#vidCover").show();
   });
 
@@ -165,16 +175,17 @@ $(document).on('click', '#vidCover', function () {
 </script>
 
 
-<div class="storybox">
+<div class="storybox" style="display:none">
 <div class="hideAdvanced">✕</div>
 
-Tensor–vector–scalar gravity (TeVeS) is a disputed theory of modified gravity that accounts for the flat rotation curves of galaxies. The TeVeS theory requires massive neutrinos, hot dark matter to make the equations work. I still believe. 
+Tensor–vector–scalar gravity (TeVeS) is a disputed theory of modified gravity that accounts for the flat rotation curves of galaxies. The TeVeS theory requires massive neutrinos<!--, hot dark matter to make the equations work-->.<br>
+I&nbsp;still&nbsp;believe. 
 
 </div>
 
 <br>
 
-<div id="menuHolder"></div>
+
 <div class="container">
 <div class="content">
 
@@ -195,7 +206,7 @@ Out on the sea-ice stand the two tallest buildings on the continent -- the IceCu
 <h2>The "IceCube" Telescope</h2>
 
 <p>
-The Neutrino Detection Project, lead by Dr. Peter Gorham, a physicist from the University of Hawaii, was the first scientific group to detect the highest energy neutrinos in the universe. He excitedly gushes (though still struggles finding the words to describe something he's only beginning to understand): "The neutrino is the most ridiculous particle you can imagine. They exist, but we can't get our hands on them, because they seem to just exist in another place.  And, as a physicist, even though I understand it mathematically, and I understand it intellectually, it still hits me in the gut that there is something here, surrounding me, almost like some kind of spirit or God, that I can't touch, but I can measure it. I can make a measurement. It's like measuring the spirit world, or something like that... From Encounters at the End of the World (2007)
+The Neutrino Detection Project, lead by Dr. Peter Gorham, a physicist from the University of Hawaii, was the first scientific group to detect the highest known energy neutrinos in the universe. He excitedly gushes (though still struggles finding the words to describe something he's only beginning to understand): "The neutrino is the most ridiculous particle you can imagine. They exist, but we can't get our hands on them, because they seem to just exist in another place.  And, as a physicist, even though I understand it mathematically, and I understand it intellectually, it still hits me in the gut that there is something here, surrounding me, almost like some kind of spirit or God, that I can't touch, but I can measure it. I can make a measurement. It's like measuring the spirit world, or something like that... From Encounters at the End of the World (2007)
 </p>
 
 <p><img src="winter/img/neutrino.jpg" style="float:left; margin-right:20px" />
@@ -215,7 +226,7 @@ these neutrinos are swamped by the downgoing cosmic-ray muon
 background.&#8221;  - <a href="http://en.wikipedia.org/wiki/IceCube_Neutrino_Observatory" target="IceCube">More</a></p>
  
 
-<p>Neutrinos carry away most of the gravitational energy released by the collapse of massive stars. Electric charge-free and with an extremely small mass (0.1 eV or greater, compared with about 0.5 MeV for the electron), it is considered a key element, because it can relate both with matter and dark matter - if there is such a thing.
+<p>Neutrinos carry away most of the gravitational energy released by the collapse of massive stars. Electric charge-free and with an extremely small mass (0.1 eV or greater, compared with about 0.5 MeV for the electron), the neutrino is considered a key element, because it can relate both with matter and dark matter - if there is such a thing.
 
 <!-- "A very interesting possibility – postulated in 1977 by Murray Gell-Mann, Pierre Ramond and Dick Slansky – is that the neutrino masses are inversely proportional to the high-energy scale at which the quark-lepton symmetry is broken."
 -->
@@ -263,7 +274,7 @@ craft on the smooth surface away from the turbulent shoreline.</p>
  
 <p>This morning I gradually awoke, still gliding along the
 icy artic coast, the voice of an elder in my mind. 
-&#8220;When you travel the surface between elements, find the rhythm and there you will move faster than amoung either
+&#8220;When you travel the surface between elements, find the rhythm. There you will move faster than among either
 element alone.&#8221;</p>
  
 <p>As I paddle, near the massive outcropping, my efforts are slowed.  Buffeted by waves as they bounce off the rocks and set my boat rocking, counter to my efforts.  It is not until I adjust my strokes to use the rocking to my advantage that I can use the rhythmic waves to increase my speed.</p>
@@ -307,19 +318,16 @@ dark matter, but work in a similar way to alter the amount of gravity
 present.&#8221;</p>
  
 <p>
-  "One primary success of TeVeS is that it provides an enhancement of gravitational lensing, which could not be achieved by other MONDian theories." - <a href="https://inspirehep.net/literature/687344">2005</a> 
+  "One primary success of TeVeS is that it provides an enhancement of gravitational lensing, which could not be achieved by other MONDian theories." - <a href="https://inspirehep.net/literature/687344">2005</a><br><br>
 
-How Would Galaxies Form in a Universe Without Dark Matter? Researchers Find Out
-2020 - 
-  https://scitechdaily.com/how-would-galaxies-form-in-a-universe-without-dark-matter-researchers-find-out/
+How Would Galaxies Form in a Universe Without Dark Matter? <a href="https://scitechdaily.com/how-would-galaxies-form-in-a-universe-without-dark-matter-researchers-find-out/">Researchers Find Out in 2020</a>
+  
 </p>
  
 <p>
-The Bullet cluster and others exhibit that under the right conditions, gravity exhibits non-local effects.
-
-One of the surviving MOND theiries is MOG: a theory of gravity with non-local effects akin to quantum physics on the scale of galaxy clusters (perhaps when the relative absense of matter in the surrounding universe exerts less influence).
+The Bullet cluster and others exhibit that under the right conditions, gravity exhibits non-local effects. 
+One of the surviving MOND theiries is MOG, a theory of gravity with non-local effects akin to quantum physics on the scale of galaxy clusters (perhaps when the relative absense of matter in the surrounding universe exerts less influence).
 </p>
-
 
 <p>&#8220;<a href="http://en.wikipedia.org/wiki/Shapiro_delay">Shapiro delay</a> - Radar signals passing near a massive object take slightly longer to travel to a target and longer to return than it would
 if the mass of the object were not present.&#8221; &nbsp;Time is delayed for light
@@ -328,9 +336,7 @@ traveling around a single mass.</p>
 <h2>Pole to Pole</h2>
 <br>
 
-<p>Back in the Inuit villiage, a group of colorfully dressed children are
-winding ribbons around a May pole.  Braiding colors to a circling
-rhythm.</p>
+<p>Back in the Inuit villiage, a group of colorfully dressed children are winding ribbons around a May pole.  Braiding colors to a circling rhythm.</p>
  
 <p>The May Day celebration has ended and the older boys have the task of removing
 the pole. The first two tug and push to no avail, stuck in the frozen
