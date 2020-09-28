@@ -31,6 +31,9 @@
 <div class="plyr__video-embed" id="player">
     <div id="vidCover">
     </div>
+    <div class="floatMessage">
+      Turn on audio below for the full effect.
+    </div>
     <iframe
         src="https://www.youtube.com/watch?v=t57DPnH06V0&origin=https://plyr.io&iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&rel=0&enablejsapi=1"
         allowfullscreen
@@ -57,7 +60,7 @@
     top:0px;
     left:0px;
     right:0px;
-    bottom:0px;
+    bottom:20px;
   }
   .plyr__volume {
     displayX: none;
@@ -78,48 +81,76 @@
   }
   */
 
+.storybox {
+  position: absolute;
+  left: 0px;
+  bottom: 200px;
+  width: 420px;
+  background-color: rgba(35, 35, 35, .5);
+  padding: 50px 40px 40px 80px;
+  color:#fff;
+  line-height: 2.6em;
+  font-size: 16px;
+}
+@media (max-width: 800px) {
   .storybox {
       clear:both;
       padding: 30px;
   }
-  @media (min-width: 800px) {
-      .storybox {
-          position: absolute;
-          left: 0px;
-          bottom: 200px;
-          heightX: 420px;
-          width: 420px;
-          background-color: rgba(35, 35, 35, .5);
-          padding: 50px 60px 40px 120px;
-          color:#fff;
-          line-height: 2.6em;
-          font-size: 16px;
-      }
-  }
-  .hideAdvanced {
-    position:absolute;
-    top:0px;
-    right:20px;
-    cursor:pointer;
-    opacity:0.5;
-  }
-  /*
-  .plyr__video-embed iframe {
-    pointer-events: all !important;
-  }
-  */
+}
+
+.floatMessage {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(35, 35, 35, 1);
+  padding: 30px 40px 60px 40px;
+  color:#fff;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.hideAdvanced {
+  position:absolute;
+  top:0px;
+  right:20px;
+  cursor:pointer;
+  opacity:0.5;
+}
+#IceCube_standalone {
+
+}
+#IceCube_standalone {
+  width:200px;
+  opacity:.8
+}
+#IceCube_standalone:hover {
+  opacity: 1;
+}
+/*
+.plyr__video-embed iframe {
+  pointer-events: all !important;
+}
+*/
 </style>
+
  <script>
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
   const player = new Plyr('#player', {autopause:'true',color:'adef00'});
   window.player = player;
 
   setTimeout(function(){  
     //player.currentTime = 50; // Seeks to 10 seconds
     //player.volume = 0.5;
-    player.mutedX = true;
+
+    if (isChrome) {
+      player.muted = true; // On Chrome, video will not start automatically unless muted.
+      $('.floatMessage').show();
+    }
     //player.color = 'adef00';
 
-    player.play(); // Not working in Chrome
+    player.play();
   }, 2000);
 
 
@@ -130,8 +161,6 @@
   });
 
   player.on('play', event => {
-    //const instance = event.detail.plyr;
-
     // Delayed to allow time for video title to disappear.
     setTimeout(function(){
       $("#headerbar").fadeOut();
@@ -141,6 +170,10 @@
     }, 33000);
 
     $("#vidCover").show();
+  });
+
+  player.on('volumechange', event => {
+    $('.floatMessage').hide();
   });
 
   // Allow click through. Need to block rollover.
@@ -176,12 +209,14 @@ $(document).on('click', '#vidCover', function () {
 
 
 <div class="storybox" style="display:none">
-<div class="hideAdvanced">✕</div>
+  <div class="hideAdvanced">✕</div>
 
-Tensor–vector–scalar gravity (TeVeS) is a disputed theory of modified gravity that accounts for the flat rotation curves of galaxies. The TeVeS theory requires massive neutrinos<!--, hot dark matter to make the equations work-->.<br>
-I&nbsp;still&nbsp;believe. 
+  <b>Tensor–vector–scalar gravity (TeVeS)</b> is a disputed theory of modified gravity that accounts for the flat rotation curves of galaxies. The TeVeS theory requires massive neutrinos<!--, hot dark matter to make the equations work-->.<br>
+  I&nbsp;still&nbsp;believe. 
 
 </div>
+
+
 
 <br>
 
@@ -200,7 +235,13 @@ I&nbsp;still&nbsp;believe.
 
 Out on the sea-ice stand the two tallest buildings on the continent -- the IceCube Lab where scientists search for almost undetectable subatomic particles -- neutrinos.</p>
 
-<p><a href="/travelschool/sun/img/icecube_south_pole_detector.png"><img src="/travelschool/sun/img/icecube_south_pole_detector.png" style="width:100%" alt="" /></a></p>
+<p>
+
+<div style="position:relative">
+  <a href="/travelschool/sun/img/icecube_south_pole_detector.png"><img src="/travelschool/sun/img/icecube_south_pole_detector.png" style="width:100%" alt="" /></a>
+  <div style="position:absolute; bottom:20px; right:20px"><a href="/travelschool/sun/img/IceCube_standalone.jpg"><img id="IceCube_standalone" src="sun/img/IceCube_standalone.jpg"></a></div>
+</div>
+</p>
 <p><a href="/travelschool/sun/img/IceCube_standalone.jpg">How tall is the IceCube array compared to the Empire State Building?</a></p>
 
 <h2>The "IceCube" Telescope</h2>
@@ -246,7 +287,7 @@ Computer data shows a neutrino impact amid IceCube's hollow columns.</p>
 <p>"In 2013, the IceCube neutrino experiment at the South Pole reported the observation of two ultra-high-energy neutrino events, which they named after Sesame Street characters <a href="/travelschool/sun/img/bert-and-ernie.png">Bert and Ernie</a>. The third, they nichknamed "Big Bird".</p>
 
 <p>
-In 2018 Astronomers traced a high-energy neutrino to its cosmic source for the first time, the jets of a Blazer black hole which points in our general direction from within the Orien constellation.  Cosmic rays are emitted simultaneously, but their charged nature causes them to take a meandering path.
+In 2018 Astronomers traced a high-energy neutrino to its cosmic source for the first time, the jets of a Blazer black hole which points in our general direction from within the Orien constellation.  Cosmic rays are emitted simultaneously, but their charged nature causes them to take a meandering&nbsp;path.
 </p>
 
 <p><a href="http://news.stanford.edu/news/2014/march/physics-cosmic-inflation-031714.html"><img src="img/antarctica/bicep-telescope.jpg" style="width:100%" alt="" /></a><br>
@@ -353,13 +394,6 @@ top of the pole is vibrating back and forth. With a slight upward push of his ha
 
 <p>Continue: <a href="/travelschool/spring/finibus-tour" target="finibus">Finibus Tour</a></p>
 
-
-
-
-<p style="display:none" class="local">
-
-  “Under MOND, mass is much more effective at bending space-time than under General Relativity, so it takes less stuff in the universe to account for all the gravity we measure. When applied to just galaxies, MOND can predict very well the behavior that astronomers observe. But when MOND is applied to larger structures like clusters of galaxies, it fails. To make MOND work for clusters, it must include more complicated concepts, such as entities called dark fields, which are different from dark matter, but work in a similar way to alter the amount of gravity present.” http://www.space.com/scienceastronomy/091105-missing-matter.html “Shapiro delay - Radar signals passing near a massive object take slightly longer to travel to a target and longer to return than it would if the mass of the object were not present.” Time is delayed for light traveling around a single mass. http://en.wikipedia.org/wiki/Shapiro_delay Back in the Inuit villiage, a group of colorfully dressed children are winding ribbons around a May pole. Braiding colors to a circling rhythm. The celebration has ended and the older boys have the task of removing the pole. The first two tug and push to no avail, stuck in the frozen permafrost. A third, approaches the pole and sets his hand on it and gives a little push. Then another gentle push, and another, and soon the top of the pole is vibrating back and forth, as the bottom of the pole slowly rises out of the permafrost muck. Back and forth, back and forth. Pole to pole. “Neutrinos are electrically neutral leptons, and interact very rarely with matter. When they do react with the molecules of water in the ice, they can create charged leptons (electrons, muons, or taus). These charged leptons can, if they are energetic enough, emit Cherenkov radiation. This happens when the charged particle travels through the ice faster than the speed of light in the ice, similar to the bow shock of a boat traveling faster than the waves it crosses. This light can then be detected by photomultiplier tubes (PMTs) within the digital optical modules (or DOMs) making up IceCube. Even though it is located in Antarctica, IceCube is more sensitive to point sources more in the northern hemisphere than the southern. It can observe astrophysical neutrino signals from any direction, but in the southern hemisphere these neutrinos are swamped by the downgoing cosmic-ray muon background.” http://en.wikipedia.org/wiki/IceCube_Neutrino_Observatory
-</p>
 
 
 <ul class="footer">
