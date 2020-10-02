@@ -8,7 +8,9 @@
 
 <title>TeVeS - Finding Neutrino - The "IceCube" Telescope</title>
 
-
+<!--
+  As you get closer to death, closer to the dream surface, ideas and symbols begin to blur. Memories fall into compartments, vases of fine dust on a shelf, worth pouring through, but seemly shallow in their essense. Each offers up a part of the whole, but indendent of charge the dust can hold you no more.
+-->
 <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
 <link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
 
@@ -19,7 +21,7 @@
 <script type="text/javascript" src="https://neighborhood.org/localsite/js/showdown.min.js"></script>
 <script type="text/javascript" src="https://neighborhood.org/localsite/js/navigation.js"></script>
 
-<!-- video loading is broken in Chrome, regardless of darkley presense -->
+<!-- video auto-play in Chrome requires starting with plyr audio off. -->
 <link type="text/css" rel="stylesheet" href="https://neighborhood.org/localsite/css/bootstrap.darkly.min.css">
 <link rel="stylesheet" type="text/css" href="/travelschool/css/all.css" />
 
@@ -32,7 +34,7 @@
     <div id="vidCover">
     </div>
     <div class="floatMessage">
-      Turn on audio below for the full effect.
+      Turn on audio below.
     </div>
     <iframe
         src="https://www.youtube.com/watch?v=t57DPnH06V0&origin=https://plyr.io&iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&rel=0&enablejsapi=1"
@@ -136,7 +138,9 @@
 
  <script>
   var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-
+  if (navigator.brave) {
+    isChrome = false;
+  }
   const player = new Plyr('#player', {autopause:'true',color:'adef00'});
   window.player = player;
 
@@ -152,7 +156,6 @@
 
     player.play();
   }, 2000);
-
 
   player.on('pause', event => {
     //const instance = event.detail.plyr;
@@ -224,16 +227,40 @@ $(document).on('click', '#vidCover', function () {
 <div class="container">
 <div class="content">
 
+<div style="float:right">
+  <link type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script type="text/javascript" src="https://audioscape.github.io/audio/js/audio.js"></script>
+  <div id="audioscape-output-control"></div>
+</div>
+
 <a href="../../" class="returnhome">Island Studio</a>
 
 <h1>Finding Neutrino</h1>
 
-
-
 <h2>Expedition Journal: The Energy of Waves</h2>
 
 
-Out on the sea-ice stand the two tallest buildings on the continent -- the IceCube Lab where scientists search for almost undetectable subatomic particles -- neutrinos.</p>
+<div class="audioscape">
+<p>
+Moog wasn't going to let another drone puck go by. Diving across the snowdrift, he swung to push the flying puck out over the kids' heads, and watched it work it's way toward the opposite goal, blades humming, as the kids applied movements and air body-slams to move it down the court. The rules were no contact with the flying puck. Its sensors responded to the gestures and intent of each player. Mesh over the blades protected players from the rotors during occasional finger glances, which also incurred a 1-point penalty. 
+</p>
+
+<p>
+The puck's response was fast, it was hard to actually hit if you wanted to because it anticipated based on a network connected to every player's EEG gear. Using the combination of arm movement and your EEG headset reading, you could swing one way, and simultaneously tell the puck to fly in the other direction using your eyes to fake out another player. When two player intents collided, the puck often shot straight up like a magnet flipping out of a field.
+</p>
+<!--  -->
+
+<p>
+Moog moved quickly too and looked especially tall and slender in his red, yellow and green arctic snow suit. Years of playing hackysack on Caribbean beaches made him quick and nibble, even for his late 40s. Surrounded with a circle of five kids, dreadlocks tied in the back, arms folded across his chest, he stepped swiftly through the flurry of feet to recover control of the puck by raising his hands quickly on either side of it, then mentally tap and then punch it forward with a fist bump toward Jen, who stood wide open across the ice field near the entrance road to IceCube. She gave a final small mental nudge to win the game and they all rushed for the steaming hot coco and donuts Reg had brought to the side of the field, winning team getting first dibs on the jelly filling.
+</p> 
+
+<p>
+Behind them on the sea-ice stood the two tallest buildings on the continent -- the IceCube Lab where scientists searched for almost undetectable subatomic particles -- neutrinos.
+</p>
+
+<!--
+  The best players had ali invested in Neuralink augmentation, but to be fair here the first day of Travel School, the few with lace had their implants turned off.
+-->
 
 <p>
 
@@ -247,7 +274,7 @@ Out on the sea-ice stand the two tallest buildings on the continent -- the IceCu
 <h2>The "IceCube" Telescope</h2>
 
 <p>
-The Neutrino Detection Project, lead by Dr. Peter Gorham, a physicist from the University of Hawaii, was the first scientific group to detect the highest known energy neutrinos in the universe. He excitedly gushes (though still struggles finding the words to describe something he's only beginning to understand): "The neutrino is the most ridiculous particle you can imagine. They exist, but we can't get our hands on them, because they seem to just exist in another place.  And, as a physicist, even though I understand it mathematically, and I understand it intellectually, it still hits me in the gut that there is something here, surrounding me, almost like some kind of spirit or God, that I can't touch, but I can measure it. I can make a measurement. It's like measuring the spirit world, or something like that... From Encounters at the End of the World (2007)
+The Neutrino Detection Project, led by Dr. Peter Gorham, a physicist from the University of Hawaii, was the first scientific group to detect the highest known energy neutrinos in the universe. He excitedly gushes (though still struggles finding the words to describe something he's only beginning to understand): "The neutrino is the most ridiculous particle you can imagine. They exist, but we can't get our hands on them, because they seem to just exist in another place.  And, as a physicist, even though I understand it mathematically, and I understand it intellectually, it still hits me in the gut that there is something here, surrounding me, almost like some kind of spirit or God, that I can't touch, but I can measure it. I can make a measurement. It's like measuring the spirit world, or something like that... From Encounters at the End of the World (2007)
 </p>
 
 <p><img src="winter/img/neutrino.jpg" style="float:left; margin-right:20px" />
@@ -284,7 +311,7 @@ Computer data shows a neutrino impact amid IceCube's hollow columns.</p>
 
 <p>Through our eyes the universe is perceiving itself... - Alan Watts</p>
  
-<p>"In 2013, the IceCube neutrino experiment at the South Pole reported the observation of two ultra-high-energy neutrino events, which they named after Sesame Street characters <a href="/travelschool/sun/img/bert-and-ernie.png">Bert and Ernie</a>. The third, they nichknamed "Big Bird".</p>
+<p>"In 2013, the IceCube neutrino experiment at the South Pole reported the observation of two ultra-high-energy neutrino events, which they named after Sesame Street characters <a href="/travelschool/sun/img/bert-and-ernie.png">Bert and Ernie</a>. The third, they nicknamed "Big Bird".</p>
 
 <p>
 In 2018 Astronomers traced a high-energy neutrino to its cosmic source for the first time, the jets of a Blazer black hole which points in our general direction from within the Orien constellation.  Cosmic rays are emitted simultaneously, but their charged nature causes them to take a meandering&nbsp;path.
@@ -377,7 +404,7 @@ traveling around a single mass.</p>
 <h2>Pole to Pole</h2>
 <br>
 
-<p>Back in the Inuit villiage, a group of colorfully dressed children are winding ribbons around a May pole.  Braiding colors to a circling rhythm.</p>
+<p>Back in the Inuit villiage, a group of colorfully dressed children are winding ribbons around a May pole, braiding colors to a circling rhythm.</p>
  
 <p>The May Day celebration has ended and the older boys have the task of removing
 the pole. The first two tug and push to no avail, stuck in the frozen
@@ -387,14 +414,14 @@ top of the pole is vibrating back and forth. With a slight upward push of his ha
  
 <p>Back and forth, back and forth. Pole to pole.</p>
 
-<p>Langford had dropped out of college to pursue a dream of returning ice to polar regions using a Peltier element to produce <a href="https://www.sciencedaily.com/releases/2019/04/190419165531.htm">ice without energy</a>.
+<p>Shortly before his Artic trip, Langford had dropped out of college to pursue a dream of restoring ice to polar tundra using a Peltier element that produced <a href="https://www.sciencedaily.com/releases/2019/04/190419165531.htm">ice without energy</a>.
 
-  But then the chilling technology we were developing took a profitable turn to become the very popular "PopBox" curb-side fridge business you know of today.  Designed so the lids were flush with ground level, the solar panel on the lid allowed the box to also heat a meal as residents returned home.
+Within a year, the cooling technology we were developing took a profitable turn and became the very popular curb-side cooler business you know of today as "PopBox".  Designed so the lids were flush with ground level, the solar panel on the lid allowed the box to also heat a meal as residents returned home.
 </p>
 
 <p>Continue: <a href="/travelschool/spring/finibus-tour" target="finibus">Finibus Tour</a></p>
 
-
+</div><!-- /audioscape -->
 
 <ul class="footer">
     <li><a href="/travelschool/">&copy; 2020 Island Studio</a></li>

@@ -171,7 +171,7 @@ blockquote {
 .container {
 	margin-top: 25px;
 	margin-bottom: 25px;
-	background-color: rgba(35, 35, 35, .8);
+	background-colorX: rgba(35, 35, 35, .8);
 }
 .header { overflow:auto; color: #073675; font-weight: bold; padding-left: 20px; }
 
